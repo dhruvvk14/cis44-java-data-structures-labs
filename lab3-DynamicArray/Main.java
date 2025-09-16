@@ -8,7 +8,7 @@ public class Main {
         }
         for (int i = 14; i >= 0; i--) {
             a.remove(i);
-            System.out.print("Printing: ");
+            System.out.print("Printing, current size is " + a.size() + ": ");
             a.print();
         }
         

@@ -39,4 +39,7 @@ public class DynamicArray<T> {
         curInd--;
         return type;
     }
+    public int size() {
+        return curInd;
+    }
 }
