@@ -52,20 +52,23 @@ public class TextEditor {
 
     public static void main(String[] args) {
         TextEditor t = new TextEditor();
+        System.out.println("Adding initial data");
         t.add("Hello");
         t.add(" World");
         t.printCurrent();
-
+        System.out.println("Testing Undo");
         t.undo();
         t.printCurrent();
         
-
+        
         t.add("Check");
         t.printCurrent();
 
         t.redo();
+        System.out.println("Checking the redo should do nothing");
         t.printCurrent();
 
+        System.out.println("More extensive testing");
         t.add("I love this class :)");
         t.printCurrent();
 
