@@ -30,6 +30,7 @@ public class FloydWarshall {
         // for (int i = 0; i < )
     }
     public String shortestPath(String place1, String place2) {
+        if (place1.equals(place2)) return "The minimum distance is between " + place1 + " and " + place2 + " is " + 0.0;
         Map <String, Integer> mp = graph.getPlaceToId();
         double ret = 0;
 

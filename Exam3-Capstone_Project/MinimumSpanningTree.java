@@ -6,8 +6,10 @@ public class MinimumSpanningTree {
     public MinimumSpanningTree(Graph graph) {
         this.graph = graph;
         total = -1;
+        if (graph.getNodes().size() == 1) connected = true;
+        else connected = false;
     }
-    private boolean connected = false;
+    private boolean connected;
     public ArrayList<Edge> kruskalMST() {
         //first sort. 
         ArrayList<Edge> edges = graph.getEdges();
