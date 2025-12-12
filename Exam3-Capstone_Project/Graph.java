@@ -8,8 +8,8 @@ public class Graph {
     // private ArrayList<Edge> adj[1001];
     private ArrayList<ArrayList<Edge>> adj;
     private double[][] adjacencyMatrix;
-    Map <Integer, String> idToPlace;
-    Map <String, Integer> placeToId;
+    private Map <Integer, String> idToPlace;
+    private Map <String, Integer> placeToId;
 
     public Graph() {
         nodes = new ArrayList<Node>();

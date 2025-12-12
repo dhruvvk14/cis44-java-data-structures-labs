@@ -1,38 +1,34 @@
 // import java
 
+import java.util.ArrayList;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void test1(){
         Graph graph = new Graph();
-        graph.addPlace("Dhruv's House");
-        graph.addPlace("UC Irvine");
-        graph.addPlace("Mission College");
-        graph.addPlace("Friend #1");
-        graph.addPlace("Friend #2");
-        graph.addPlace("Friend #3");
-        graph.addPlace("Friend #1");
-        graph.addRoad("Dhruv's House", "UC Irvine", 100);
-        graph.addRoad("Friend #1", "UC Irvine", 2);
-        graph.addRoad("Dhruv's House", "Friend #1", 4);
-        graph.addRoad("Friend #2", "Friend #1", 2);
-        // graph.addRoad()
-        graph.addRoad("Friend #1", "Friend #2", 4);
-        FloydWarshall fw = new FloydWarshall(graph, graph.getAdjMatrix());
         // System.out.println();
-        System.out.println(fw.shortestPath("Dhruv's House", "Friend #2"));
+        FloydWarshall fw = new FloydWarshall(graph,graph.getAdjMatrix() );
+        if (fw.shortestPath("Doesn't exist", "Doesn't exist #2").equals("One of the places provided doesn't exist")) System.out.println("PASS");
+        else System.out.println("FAIL");
+    }
+    public static void test2(){
+        Graph graph = new Graph();
 
+        // System.out.println(testing.shortestPath("Dhruv's House", "UC Irvine"));
+        
+        // FloydWarshall fw = new FloydWarshall(graph, graph.getAdjMatrix());
         MinimumSpanningTree mst = new MinimumSpanningTree(graph);
-        // System.out.println(mst.);
-        System.out.println(mst.kruskalMST());
-        System.out.println(mst.returnTotal());
-        // int n = graph.getNodes().size();
-        // double adjmatr[][] = graph.getAdjMatrix();
-        // for (int i = 0; i < n; i++) {
-        //     for (int j = 0; j < n; j++) {
-        //         System.out.print(adjmatr[i][j] + " ");
-        //     }System.out.println();
-        // }
-        // System.out.println(fw);
+        ArrayList<Edge> edges = new ArrayList<>();
+        // edges.add(new Edge(Dhruv))
+        if (mst.kruskalMST().toString().equals("[]")) System.out.println("PASS");
+        else System.out.println("FAIL");
 
+    }
+    public static void main(String[] args) {
 
+        //way more tests in Testing.java
+        System.out.print("TEST 1: ");
+        test1();
+        System.out.println("TEST 2: ");
+        test2();
     }
 }

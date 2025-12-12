@@ -7,6 +7,7 @@ public class MinimumSpanningTree {
         this.graph = graph;
         total = -1;
     }
+    private boolean connected = false;
     public ArrayList<Edge> kruskalMST() {
         //first sort. 
         ArrayList<Edge> edges = graph.getEdges();
@@ -24,10 +25,14 @@ public class MinimumSpanningTree {
             ret.add(e);
             total += weight;
         }
-        if (ret.size() == graph.getNodes().size()-1) System.out.println("Graph is connected.");
-        else System.out.println("Graph isn't connected");
+        if (ret.size() == graph.getNodes().size()-1) {
+            connected = true;
+        }
+        // if (ret.size() == graph.getNodes().size()-1) System.out.println("Graph is connected.");
+        // else System.out.println("Graph isn't connected");
         return ret;
     }
+    public boolean getConnected() {return connected;}
     public double returnTotal() {
         if (total == -1) {
             this.kruskalMST();
